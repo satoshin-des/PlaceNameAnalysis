@@ -20,6 +20,16 @@
         "example": "いなりやま"
     },
     {
+        "token": "いり",
+        "meaning": "谷",
+        "example": "やついり"
+    },
+    {
+        "token": "いる",
+        "meaning": "谷",
+        "example": "いるま"
+    },
+    {
         "token": "うし",
         "meaning": "牛",
         "example": "牛"
@@ -45,14 +55,24 @@
         "example": "かわ"
     },
     {
+        "token": "か",
+        "meaning": "場所",
+        "example": "おか"
+    },
+    {
         "token": "が",
         "meaning": "の",
         "example": "みやがやと"
     },
     {
-        "token": "か",
-        "meaning": "場所",
-        "example": "おか"
+        "token": "が",
+        "meaning": "川",
+        "example": "くまがわ"
+    },
+    {
+        "token": "くま",
+        "meaning": "曲",
+        "example": "くまがわ"
     },
     {
         "token": "くめ",
@@ -70,9 +90,24 @@
         "example": "さかうえ"
     },
     {
+        "token": "さき",
+        "meaning": "崎",
+        "example": "やまざき"
+    },
+    {
+        "token": "ざき",
+        "meaning": "崎",
+        "example": "やまざき"
+    },
+    {
         "token": "さし",
         "meaning": "焼き畑",
         "example": "こてさし"
+    },
+    {
+        "token": "た",
+        "meaning": "田",
+        "example": "やまだ"
     },
     {
         "token": "つ",
@@ -83,6 +118,11 @@
         "token": "つか",
         "meaning": "塚",
         "example": "おおつか"
+    },
+    {
+        "token": "づか",
+        "meaning": "塚",
+        "example": "ささづか"
     },
     {
         "token": "と",
@@ -110,9 +150,29 @@
         "example": "ひかわ"
     },
     {
+        "token": "ひかわ",
+        "meaning": "氷川社",
+        "example": "ひかわうえ"
+    },
+    {
+        "token": "ひかわ",
+        "meaning": "湧水地",
+        "example": "ひかわ"
+    },
+    {
+        "token": "ほ",
+        "meaning": "窪地",
+        "example": "ほと"
+    },
+    {
         "token": "ま",
         "meaning": "場所",
         "example": "ぬま"
+    },
+    {
+        "token": "まま",
+        "meaning": "湧水地",
+        "example": "ままうえ"
     },
     {
         "token": "みや",
@@ -138,5 +198,10 @@
         "token": "わ",
         "meaning": "場所",
         "example": "かわ"
+    },
+    {
+        "token": "わら",
+        "meaning": "原",
+        "example": "かわら"
     }
 ]
