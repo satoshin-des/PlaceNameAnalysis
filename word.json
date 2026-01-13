@@ -243,5 +243,40 @@
                 "meaning": "下"
             }
         ]
+    },
+    {
+        "text": "ひかわまえ",
+        "segments": [
+            {
+                "token": "ひかわ",
+                "pos": "名詞",
+                "meaning": "氷川社"
+            },
+            {
+                "token": "まえ",
+                "pos": "名詞",
+                "meaning": "前"
+            }
+        ]
+    },
+    {
+        "text": "あらく",
+        "segments": [
+            {
+                "token": "あらく",
+                "pos": "名詞",
+                "meaning": "開墾地"
+            }
+        ]
+    },
+    {
+        "text": "あらい",
+        "segments": [
+            {
+                "token": "あらい",
+                "pos": "名詞",
+                "meaning": "開墾地"
+            }
+        ]
     }
 ]
