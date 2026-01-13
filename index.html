@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TF.js Morphological Analysis Tool</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <style>
+        :root {
+            --primary: #4a90e2;
+            --bg: #f5f7f9;
+            --card: #ffffff;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'BIZ UDPGothic', sans-serif;
+            background-color: var(--bg);
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        h2 { font-size: 1.1rem; margin-top: 0; color: #555; margin-bottom: 15px; }
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        #status {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 15px;
+            min-height: 1.2em;
+        }
+        .result-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .result-item {
+            border: 1px solid #f0f0f0;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .morpheme-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .morpheme-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+        .word { font-weight: bold; font-size: 1.1rem; color: var(--primary); }
+        .score-badge {
+            font-size: 0.75rem;
+            background: #eef5ff;
+            color: var(--primary);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .meaning { font-size: 0.95rem; color: #444; margin-bottom: 4px; }
+        .example { font-size: 0.8rem; color: #999; font-style: italic; }
+        
+        .empty-state {
+            text-align: center;
+            color: #bbb;
+            padding: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>辞書ベース解析ツール</h1>
+        <p>word.json に基づく推論エンジン</p>
+    </header>
+
+    <div class="card">
+        <h2>分析したいテキストを入力</h2>
+        <input type="text" id="targetInput" placeholder="例：形態素解析を学習します..." autocomplete="off">
+        <div id="status">辞書データを読み込んでいます...</div>
+        
+        <div id="results" class="result-list">
+            </div>
+    </div>
+</div>
+
+<script>
+    let dictionaryData = [];
+
+    // word.json の読み込み
+    async function loadDictionary() {
+        try {
+            const response = await fetch('word.json');
+            if (!response.ok) throw new Error('word.json が見つかりません。');
+            dictionaryData = await response.json();
+            document.getElementById('status').innerText = `辞書ロード完了: ${dictionaryData.length} 件の定義`;
+            // 初期状態での解析
+            analyze();
+        } catch (error) {
+            document.getElementById('status').innerText = 'エラー: ' + error.message;
+            console.error(error);
+        }
+    }
+
+    // TensorFlow.js を使用した簡易的な類似度（推論）スコアリング
+    async function calculateSimilarity(text1, text2) {
+        // 文字の集合を作成
+        const combined = text1 + text2;
+        const chars = Array.from(new Set(combined.split('')));
+        
+        // 1-hotエンコーディング的なベクトル化
+        const vectorize = (str) => chars.map(c => str.includes(c) ? 1 : 0);
+        
+        return tf.tidy(() => {
+            const v1 = tf.tensor1d(vectorize(text1));
+            const v2 = tf.tensor1d(vectorize(text2));
+            
+            // 余弦類似度の計算
+            const dot = v1.dot(v2);
+            const norm1 = v1.norm();
+            const norm2 = v2.norm();
+            const cosineSim = dot.div(norm1.mul(norm2));
+            
+            return cosineSim.dataSync()[0] || 0;
+        });
+    }
+
+    async function analyze() {
+        const input = document.getElementById('targetInput').value.trim();
+        const resultsDiv = document.getElementById('results');
+        const status = document.getElementById('status');
+
+        if (!input) {
+            resultsDiv.innerHTML = '<div class="empty-state">入力待ち...</div>';
+            return;
+        }
+
+        // Intl.Segmenter で日本語を分かち書き
+        const segmenter = new Intl.Segmenter('ja-JP', { granularity: 'word' });
+        const tokens = Array.from(segmenter.segment(input)).map(t => t.segment);
+
+        let scoredItems = [];
+
+        // 辞書データと照合
+        for (const item of dictionaryData) {
+            let maxMorphemeScore = 0;
+
+            // 文章内の各形態素と辞書単語を比較
+            for (const token of tokens) {
+                if (token === item.word) {
+                    maxMorphemeScore = 1.0;
+                    break;
+                }
+                const sim = await calculateSimilarity(token, item.word);
+                if (sim > maxMorphemeScore) maxMorphemeScore = sim;
+            }
+
+            // 用例との文脈類似度
+            const contextScore = await calculateSimilarity(input, item.exp);
+
+            // 最終スコア（単語一致 70% + 用例親和性 30%）
+            const finalScore = (maxMorphemeScore * 0.7) + (contextScore * 0.3);
+
+            scoredItems.push({ ...item, score: finalScore });
+        }
+
+        // スコア順にソートして上位10件を抽出
+        scoredItems.sort((a, b) => b.score - a.score);
+        const top10 = scoredItems.slice(0, 10).filter(i => i.score > 0.05);
+
+        // UI表示の更新
+        resultsDiv.innerHTML = '';
+        if (top10.length === 0) {
+            resultsDiv.innerHTML = '<div class="empty-state">該当する結果が見つかりません</div>';
+        } else {
+            top10.forEach(item => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'result-item';
+                itemEl.innerHTML = `
+                    <div class="morpheme-info">
+                        <div class="morpheme-header">
+                            <span class="word">${item.word}</span>
+                            <span class="score-badge">${Math.round(item.score * 100)}% Match</span>
+                        </div>
+                        <span class="meaning">${item.mean}</span>
+                        <span class="example">用例: ${item.exp}</span>
+                    </div>
+                `;
+                resultsDiv.appendChild(itemEl);
+            });
+        }
+        status.innerText = `解析完了: 推論結果を表示しています`;
+    }
+
+    // イベント設定
+    document.getElementById('targetInput').addEventListener('input', analyze);
+
+    // 起動時に辞書をロード
+    loadDictionary();
+</script>
+
+</body>
+</html>
