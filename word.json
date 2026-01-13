@@ -58,5 +58,45 @@
         "token": "ひ",
         "meaning": "冷たい",
         "example": "ひかわ"
+    },
+    {
+        "token": "の",
+        "meaning": "の",
+        "example": "この"
+    },
+    {
+        "token": "くめ",
+        "meaning": "曲",
+        "example": "くめがわ"
+    },
+    {
+        "token": "さし",
+        "meaning": "焼き畑",
+        "example": "こてさし"
+    },
+    {
+        "token": "くるめ",
+        "meaning": "廻",
+        "example": "ひがしくるめ"
+    },
+    {
+        "token": "い",
+        "meaning": "湧水",
+        "example": "いがしら"
+    },
+    {
+        "token": "いせ",
+        "meaning": "伊勢社",
+        "example": "いせ"
+    },
+    {
+        "token": "はら",
+        "meaning": "原",
+        "example": "いせはら"
+    },
+    {
+        "token": "いせ",
+        "meaning": "石",
+        "example": "いせ"
     }
 ]
