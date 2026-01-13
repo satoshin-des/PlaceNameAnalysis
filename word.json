@@ -1,18 +1,48 @@
 [
     {
-        "token": "みや",
-        "meaning": "宮",
-        "example": "みやがやと"
+        "token": "い",
+        "meaning": "湧水",
+        "example": "いがしら"
     },
     {
-        "token": "や",
-        "meaning": "谷",
-        "example": "やと"
+        "token": "いせ",
+        "meaning": "伊勢社",
+        "example": "いせ"
     },
     {
-        "token": "と",
-        "meaning": "場所",
-        "example": "やと"
+        "token": "いせ",
+        "meaning": "石",
+        "example": "いせ"
+    },
+    {
+        "token": "いなり",
+        "meaning": "稲荷社",
+        "example": "いなりやま"
+    },
+    {
+        "token": "うし",
+        "meaning": "牛",
+        "example": "牛"
+    },
+    {
+        "token": "うし",
+        "meaning": "漆",
+        "example": "うしのま"
+    },
+    {
+        "token": "お",
+        "meaning": "峰",
+        "example": "おか"
+    },
+    {
+        "token": "おお",
+        "meaning": "大きい",
+        "example": "おおつか"
+    },
+    {
+        "token": "か",
+        "meaning": "川",
+        "example": "かわ"
     },
     {
         "token": "が",
@@ -21,23 +51,28 @@
     },
     {
         "token": "か",
-        "meaning": "川",
-        "example": "かわ"
-    },
-    {
-        "token": "わ",
-        "meaning": "場所",
-        "example": "かわ"
-    },
-    {
-        "token": "お",
-        "meaning": "峰",
-        "example": "おか"
-    },
-    {
-        "token": "か",
         "meaning": "場所",
         "example": "おか"
+    },
+    {
+        "token": "くめ",
+        "meaning": "曲",
+        "example": "くめがわ"
+    },
+    {
+        "token": "くるめ",
+        "meaning": "廻",
+        "example": "ひがしくるめ"
+    },
+    {
+        "token": "さか",
+        "meaning": "坂",
+        "example": "さかうえ"
+    },
+    {
+        "token": "さし",
+        "meaning": "焼き畑",
+        "example": "こてさし"
     },
     {
         "token": "つ",
@@ -50,14 +85,14 @@
         "example": "おおつか"
     },
     {
-        "token": "おお",
-        "meaning": "大きい",
-        "example": "おおつか"
+        "token": "と",
+        "meaning": "場所",
+        "example": "やと"
     },
     {
-        "token": "ひ",
-        "meaning": "冷たい",
-        "example": "ひかわ"
+        "token": "ぬ",
+        "meaning": "沼",
+        "example": "ぬま"
     },
     {
         "token": "の",
@@ -65,38 +100,43 @@
         "example": "この"
     },
     {
-        "token": "くめ",
-        "meaning": "曲",
-        "example": "くめがわ"
-    },
-    {
-        "token": "さし",
-        "meaning": "焼き畑",
-        "example": "こてさし"
-    },
-    {
-        "token": "くるめ",
-        "meaning": "廻",
-        "example": "ひがしくるめ"
-    },
-    {
-        "token": "い",
-        "meaning": "湧水",
-        "example": "いがしら"
-    },
-    {
-        "token": "いせ",
-        "meaning": "伊勢社",
-        "example": "いせ"
-    },
-    {
         "token": "はら",
         "meaning": "原",
         "example": "いせはら"
     },
     {
-        "token": "いせ",
-        "meaning": "石",
-        "example": "いせ"
+        "token": "ひ",
+        "meaning": "冷たい",
+        "example": "ひかわ"
+    },
+    {
+        "token": "ま",
+        "meaning": "場所",
+        "example": "ぬま"
+    },
+    {
+        "token": "みや",
+        "meaning": "宮",
+        "example": "みやがやと"
+    },
+    {
+        "token": "や",
+        "meaning": "谷",
+        "example": "やと"
+    },
+    {
+        "token": "やま",
+        "meaning": "山",
+        "example": "山下"
+    },
+    {
+        "token": "やま",
+        "meaning": "森",
+        "example": "神山"
+    },
+    {
+        "token": "わ",
+        "meaning": "場所",
+        "example": "かわ"
     }
 ]
