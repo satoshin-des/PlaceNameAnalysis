@@ -13,14 +13,9 @@
                 "meaning": "の"
             },
             {
-                "token": "や",
+                "token": "やと",
                 "pos": "名詞",
-                "meaning": "谷"
-            },
-            {
-                "token": "と",
-                "pos": "名詞",
-                "meaning": "場所"
+                "meaning": "谷戸"
             }
         ]
     },
