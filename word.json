@@ -373,5 +373,165 @@
                 "meaning": "野"
             }
         ]
+    },
+    {
+        "text": "いりま",
+        "segments": [
+            {
+                "token": "いり",
+                "pos": "名詞",
+                "meaning": "谷"
+            },
+            {
+                "token": "ま",
+                "pos": "名詞",
+                "meaning": "場所"
+            }
+        ]
+    },
+    {
+        "text": "やまだ",
+        "segments": [
+            {
+                "token": "やま",
+                "pos": "名詞",
+                "meaning": "山林"
+            },
+            {
+                "token": "だ",
+                "pos": "名詞",
+                "meaning": "田"
+            }
+        ]
+    },
+    {
+        "text": "しの",
+        "segments": [
+            {
+                "token": "しの",
+                "pos": "名詞",
+                "meaning": "篠竹"
+            },
+            {
+                "token": "やま",
+                "pos": "名詞",
+                "meaning": "さんりん"
+            }
+        ]
+    },
+    {
+        "text": "はなざわ",
+        "segments": [
+            {
+                "token": "はな",
+                "pos": "名詞",
+                "meaning": "赤土"
+            },
+            {
+                "token": "ざわ",
+                "pos": "名詞",
+                "meaning": "沢"
+            }
+        ]
+    },
+    {
+        "text": "ほどさん",
+        "segments": [
+            {
+                "token": "ほど",
+                "pos": "名詞",
+                "meaning": "陰"
+            },
+            {
+                "token": "さん",
+                "pos": "名詞",
+                "meaning": "山"
+            }
+        ]
+    },
+    {
+        "text": "ほどがや",
+        "segments": [
+            {
+                "token": "ほど",
+                "pos": "名詞",
+                "meaning": "低湿地"
+            },
+            {
+                "token": "が",
+                "pos": "助詞",
+                "meaning": "の"
+            },
+            {
+                "token": "や",
+                "pos": "名詞",
+                "meaning": "谷"
+            }
+        ]
+    },
+    {
+        "text": "とりいまえ",
+        "segments": [
+            {
+                "token": "とりい",
+                "pos": "名詞",
+                "meaning": "鳥居"
+            },
+            {
+                "token": "まえ",
+                "pos": "名詞",
+                "meaning": "前"
+            }
+        ]
+    },
+    {
+        "text": "くめがわ",
+        "segments": [
+            {
+                "token": "くめ",
+                "pos": "名詞",
+                "meaning": "曲"
+            },
+            {
+                "token": "がわ",
+                "pos": "名詞",
+                "meaning": "川"
+            }
+        ]
+    },
+    {
+        "text": "おおげえ",
+        "segments": [
+            {
+                "token": "おお",
+                "pos": "",
+                "meaning": "大きい"
+            },
+            {
+                "token": "げえ",
+                "pos": "名詞",
+                "meaning": "谷"
+            }
+        ]
+    },
+    {
+        "text": "さしがや",
+        "segments": [
+            {
+                "token": "さし",
+                "pos": "名詞",
+                "meaning": "焼き畑"
+            },
+            {
+                "token": "が",
+                "pos": "助詞",
+                "meaning": "の"
+            },
+            {
+                "token": "や",
+                "pos": "名詞",
+                "meaning": "谷"
+            }
+        ]
     }
 ]
