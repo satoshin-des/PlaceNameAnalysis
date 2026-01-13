@@ -343,5 +343,35 @@
                 "meaning": "曲"
             }
         ]
+    },
+    {
+        "text": "いるま",
+        "segments": [
+            {
+                "token": "いる",
+                "pos": "名詞",
+                "meaning": "谷"
+            },
+            {
+                "token": "ま",
+                "pos": "名詞",
+                "meaning": "場所"
+            }
+        ]
+    },
+    {
+        "text": "はんのう",
+        "segments": [
+            {
+                "token": "はん",
+                "pos": "名詞",
+                "meaning": "赤土"
+            },
+            {
+                "token": "のう",
+                "pos": "名詞",
+                "meaning": "野"
+            }
+        ]
     }
 ]
