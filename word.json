@@ -288,5 +288,60 @@
                 "meaning": "宮"
             }
         ]
+    },
+    {
+        "text": "いわざき",
+        "segments": [
+            {
+                "token": "いわ",
+                "pos": "名詞",
+                "meaning": "岩"
+            },
+            {
+                "token": "ざき",
+                "pos": "名詞",
+                "meaning": "先"
+            }
+        ]
+    },
+    {
+        "text": "はねざわ",
+        "segments": [
+            {
+                "token": "はね",
+                "pos": "名詞",
+                "meaning": "赤土"
+            },
+            {
+                "token": "ざわ",
+                "pos": "名詞",
+                "meaning": "沢"
+            }
+        ]
+    },
+    {
+        "text": "きたはけ",
+        "segments": [
+            {
+                "token": "きた",
+                "pos": "名詞",
+                "meaning": "北"
+            },
+            {
+                "token": "はけ",
+                "pos": "名詞",
+                "meaning": "ハケ"
+            }
+        ]
+    },
+    {
+        "text": "くめ",
+        "segments": [
+            {
+                "token": "くめ",
+                "pos": "名詞",
+                "meaning": "曲"
+            }
+        ]
     }
 ]
