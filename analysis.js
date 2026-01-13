@@ -1,3 +1,5 @@
+// Almost of this code is written with AI
+
 // 学習した辞書（トークンをキーにしたオブジェクト）
 let learnedDictionary = {};
 
