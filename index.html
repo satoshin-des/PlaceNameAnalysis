@@ -3,41 +3,52 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>地名解析ツール</title>
+    <title>地名要素解析</title>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url(style.css);
-    </style>
 </head>
 
-<body class="bg-gray-100 min-h-screen p-4 md:p-8 text-gray-800 font-sans">
+<body class="bg-slate-50 min-h-screen p-6 text-slate-800 font-sans">
 
-    <div class="max-w-4xl mx-auto">
-        <header class="mb-6">
-            <h1 class="text-3xl font-extrabold text-gray-900">地名要素 探索ツール</h1>
-            <p class="text-gray-500 text-sm mt-1">複数の分割パターンを解析し、確からしい順に表示します</p>
+    <div class="max-w-5xl mx-auto">
+        <header class="mb-8">
+            <h1 class="text-3xl font-extrabold text-slate-900">教師データに基づく地名要素解析</h1>
+            <p class="text-slate-500 mt-2">
+                <span id="vocabCount" class="font-bold text-blue-600">0</span> 語の語彙を学習済み
+            </p>
         </header>
 
-        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
-            <label class="block text-sm font-bold text-gray-700 mb-2">解析対象の地名</label>
-            <div class="relative">
-                <input type="text" id="inputText"
-                    class="w-full p-4 pl-4 pr-32 bg-gray-50 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:bg-white outline-none text-xl transition-colors"
-                    placeholder="例：しぶや" value="">
-                <button id="analyzeBtn"
-                    class="absolute right-2 top-2 bottom-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 rounded-md transition shadow-sm">
-                    解析
-                </button>
-            </div>
-            <p class="text-xs text-gray-400 mt-2 text-right">※辞書にある単語の組み合わせを総当たりで探索します</p>
-        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="md:col-span-1 space-y-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                    <label class="block text-sm font-bold text-slate-700 mb-2">解析したい文章</label>
+                    <textarea id="inputText" rows="4"
+                        class="w-full p-3 bg-slate-50 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none resize-none"
+                        placeholder="例: しぶや"></textarea>
 
-        <div id="resultContainer" class="space-y-6 hidden">
+                    <button id="analyzeBtn"
+                        class="w-full mt-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition shadow">
+                        解析実行
+                    </button>
+                </div>
+
+                <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 text-sm text-blue-800">
+                    <h3 class="font-bold mb-1">💡 仕組み</h3>
+                    <p>JSONファイル内の分解例から単語を自動抽出し、それを組み合わせて入力文の分解を試みます。</p>
+                </div>
+            </div>
+
+            <div class="md:col-span-2">
+                <div id="resultContainer" class="space-y-4">
+                    <div class="text-center text-slate-400 py-10 border-2 border-dashed border-slate-200 rounded-xl">
+                        左側のフォームから解析を実行してください
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="analysis.js"></script>
+    <script src="anatest.js"></script>
 </body>
 
 </html>
