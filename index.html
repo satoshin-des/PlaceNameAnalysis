@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TF.js Morphological Analysis Tool</title>
+    <title>地名解析ツール</title>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import("style.css");
+        @import url(style.css);
     </style>
 </head>
-<body>
 
-<div class="container">
-    <header>
-        <h1>辞書ベース解析ツール</h1>
-        <p>word.json に基づく推論エンジン</p>
-    </header>
+<body class="bg-gray-100 min-h-screen p-4 md:p-8 text-gray-800 font-sans">
 
-    <div class="card">
-        <h2>分析したいテキストを入力</h2>
-        <input type="text" id="targetInput" placeholder="例：形態素解析を学習します..." autocomplete="off">
-        <div id="status">辞書データを読み込んでいます...</div>
-        
-        <div id="results" class="result-list">
+    <div class="max-w-4xl mx-auto">
+        <header class="mb-6">
+            <h1 class="text-3xl font-extrabold text-gray-900">地名要素 探索ツール</h1>
+            <p class="text-gray-500 text-sm mt-1">複数の分割パターンを解析し、確からしい順に表示します</p>
+        </header>
+
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <label class="block text-sm font-bold text-gray-700 mb-2">解析対象のテキスト</label>
+            <div class="relative">
+                <input type="text" id="inputText"
+                    class="w-full p-4 pl-4 pr-32 bg-gray-50 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:bg-white outline-none text-xl transition-colors"
+                    placeholder="例：しぶや" value="">
+                <button id="analyzeBtn"
+                    class="absolute right-2 top-2 bottom-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 rounded-md transition shadow-sm">
+                    解析
+                </button>
             </div>
+            <p class="text-xs text-gray-400 mt-2 text-right">※辞書にある単語の組み合わせを総当たりで探索します</p>
+        </div>
+
+        <div id="resultContainer" class="space-y-6 hidden">
+        </div>
     </div>
-</div>
 
-<script src="analysis.js"></script>
-
+    <script src="analysis.js"></script>
 </body>
+
 </html>

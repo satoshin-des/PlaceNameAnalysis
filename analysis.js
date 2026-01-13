@@ -1,120 +1,178 @@
-let dictionaryData = [];
+let dictionary = [];
 
-    // word.json の読み込み
-    async function loadDictionary() {
-        try {
-            const response = await fetch('word.json');
-            if (!response.ok) throw new Error('word.json が見つかりません。');
-            const rawData = await response.json();
-            
-            // { "や-くも": "たくさん-雲" } 形式を [{word: "や-くも", mean: "たくさん-雲"}] に変換
-            dictionaryData = Object.entries(rawData).map(([word, mean]) => ({
-                word: word,
-                mean: mean
-            }));
-
-            document.getElementById('status').innerText = `辞書ロード完了: ${dictionaryData.length} 件の定義`;
-            analyze();
-        } catch (error) {
-            document.getElementById('status').innerText = 'エラー: ' + error.message;
-            console.error(error);
-        }
-    }
-
-    // TensorFlow.js を使用した文字列の類似度計算
-    async function calculateSimilarity(text1, text2) {
-        // ハイフンを除去して比較用の文字列を作成
-        const clean1 = text1.replace(/-/g, '');
-        const clean2 = text2.replace(/-/g, '');
-        
-        const combined = clean1 + clean2;
-        if (!combined) return 0;
-
-        const chars = Array.from(new Set(combined.split('')));
-        const vectorize = (str) => chars.map(c => str.includes(c) ? 1 : 0);
-        
-        return tf.tidy(() => {
-            const v1 = tf.tensor1d(vectorize(clean1));
-            const v2 = tf.tensor1d(vectorize(clean2));
-            
-            const dot = v1.dot(v2);
-            const norm1 = v1.norm();
-            const norm2 = v2.norm();
-            const cosineSim = dot.div(norm1.mul(norm2));
-            
-            const score = cosineSim.dataSync()[0];
-            return isNaN(score) ? 0 : score;
-        });
-    }
-
-    async function analyze() {
-        const input = document.getElementById('targetInput').value.trim();
-        const resultsDiv = document.getElementById('results');
-        const status = document.getElementById('status');
-
-        if (!input) {
-            resultsDiv.innerHTML = '<div class="empty-state">入力待ち...</div>';
-            return;
+        // 1. 辞書のロード
+        async function loadDictionary() {
+            try {
+                const res = await fetch('word.json');
+                if (!res.ok) throw new Error();
+                dictionary = await res.json();
+            } catch (e) {
+                // デモ用データ（ローカルテスト用）
+                dictionary = [
+                    {token: "東京", meaning: "日本の首都。", example: "東京タワー"},
+                    {token: "都", meaning: "行政区画の一つ。", example: "東京都"},
+                    {token: "都民", meaning: "東京都に住む人。", example: "都民税"},
+                    {token: "東", meaning: "方角のイースト。", example: "東口"},
+                    {token: "京都", meaning: "歴史ある古都。", example: "京都に行く"},
+                    {token: "民", meaning: "たみ。人々。", example: "民衆"},
+                    {token: "市民", meaning: "市に住む人。", example: "市民ホール"}
+                ];
+                console.log("デモ用データを使用します");
+            }
         }
 
-        // Intl.Segmenter で入力文を分かち書き
-        const segmenter = new Intl.Segmenter('ja-JP', { granularity: 'word' });
-        const tokens = Array.from(segmenter.segment(input)).map(t => t.segment);
+        // 2. 探索アルゴリズム (Beam Search風)
+        function findSegmentations(text) {
+            const dp = Array(text.length + 1).fill().map(() => []);
+            dp[0] = [{ tokens: [], score: 0 }]; 
 
-        let scoredItems = [];
+            for (let i = 0; i < text.length; i++) {
+                if (dp[i].length === 0) continue;
 
-        // 辞書データと照合（推論）
-        for (const item of dictionaryData) {
-            let maxScore = 0;
-            const cleanDictWord = item.word.replace(/-/g, '');
-
-            // 入力された文の中の各単語と、辞書の単語を比較
-            for (const token of tokens) {
-                // 完全一致ならスコア1.0
-                if (token === cleanDictWord) {
-                    maxScore = 1.0;
-                    break;
+                // A. 辞書マッチング
+                for (const word of dictionary) {
+                    if (text.startsWith(word.token, i)) {
+                        const nextIndex = i + word.token.length;
+                        dp[i].forEach(path => {
+                            dp[nextIndex].push({
+                                tokens: [...path.tokens, { ...word, type: 'known' }],
+                                score: path.score + (word.token.length ** 2) * 10
+                            });
+                        });
+                    }
                 }
-                // TensorFlow.jsによる類似度計算
-                const sim = await calculateSimilarity(token, cleanDictWord);
-                if (sim > maxScore) maxScore = sim;
+
+                // B. 未知語処理（1文字飛ばし）
+                const char = text[i];
+                const nextIndex = i + 1;
+                dp[i].forEach(path => {
+                    dp[nextIndex].push({
+                        tokens: [...path.tokens, { token: char, meaning: "（辞書なし）", example: "-", type: 'unknown' }],
+                        score: path.score - 5
+                    });
+                });
+
+                // 上位20件に絞る（枝刈り）
+                if (dp[i+1].length > 20) {
+                    dp[i+1].sort((a, b) => b.score - a.score);
+                    dp[i+1] = dp[i+1].slice(0, 20);
+                }
+            }
+            return dp[text.length];
+        }
+
+        // 3. ランク付け (TF.js使用)
+        function rankResults(candidates) {
+            return tf.tidy(() => {
+                if (candidates.length === 0) return [];
+
+                const scores = tf.tensor1d(candidates.map(c => c.score));
+                const min = scores.min();
+                const max = scores.max();
+                const range = max.sub(min);
+                
+                const normalized = range.dataSync()[0] === 0 
+                    ? scores.sub(min).add(1) 
+                    : scores.sub(min).div(range);
+
+                const normalizedScores = normalized.dataSync();
+
+                const ranked = candidates.map((c, i) => ({
+                    ...c,
+                    confidence: normalizedScores[i]
+                })).sort((a, b) => b.score - a.score);
+
+                return ranked.slice(0, 10);
+            });
+        }
+
+        // 4. UI描画（ここを修正しました）
+        function renderResults(results) {
+            const container = document.getElementById('resultContainer');
+            container.innerHTML = '';
+            container.classList.remove('hidden');
+
+            if (results.length === 0) {
+                container.innerHTML = '<div class="text-center text-gray-500 py-10">解析候補が見つかりませんでした。</div>';
+                return;
             }
 
-            scoredItems.push({ 
-                ...item, 
-                score: maxScore 
-            });
-        }
-
-        // スコア順にソートして上位10件を表示
-        scoredItems.sort((a, b) => b.score - a.score);
-        const top10 = scoredItems.slice(0, 10).filter(i => i.score > 0.1);
-
-        // UI表示の更新
-        resultsDiv.innerHTML = '';
-        if (top10.length === 0) {
-            resultsDiv.innerHTML = '<div class="empty-state">該当する形態素が見つかりません</div>';
-        } else {
-            top10.forEach(item => {
-                const itemEl = document.createElement('div');
-                itemEl.className = 'result-item';
-                itemEl.innerHTML = `
-                    <div class="morpheme-info">
-                        <div class="morpheme-header">
-                            <span class="word">${item.word}</span>
-                            <span class="score-badge">${Math.round(item.score * 100)}% Match</span>
+            results.forEach((res, index) => {
+                const confidencePercent = Math.round(res.confidence * 100);
+                const isTop = index === 0;
+                
+                // カード生成
+                const card = document.createElement('div');
+                // 枠線の強調ロジックは残しつつ、中身は全て表示する
+                card.className = `bg-white rounded-xl border-2 ${isTop ? 'border-blue-500 ring-4 ring-blue-50/50' : 'border-gray-200'} p-6 transition`;
+                
+                // ヘッダー
+                let html = `
+                    <div class="flex items-center justify-between mb-4 border-b border-gray-100 pb-3">
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm font-bold ${isTop ? 'bg-blue-600 text-white' : 'bg-gray-500 text-white'} px-3 py-1 rounded-full">
+                                候補 ${index + 1}
+                            </span>
+                            ${isTop ? '<span class="text-xs font-bold text-blue-600">★ 最有力</span>' : ''}
                         </div>
-                        <span class="meaning">${item.mean}</span>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs text-gray-400">類似度</span>
+                            <div class="w-24 bg-gray-100 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: ${Math.max(confidencePercent, 5)}%"></div>
+                            </div>
+                            <span class="text-xs font-mono text-gray-500 w-8 text-right">${confidencePercent}%</span>
+                        </div>
                     </div>
                 `;
-                resultsDiv.appendChild(itemEl);
+
+                // トークン（青いタグ）エリア
+                html += `<div class="flex flex-wrap items-center gap-2 mb-5">`;
+                res.tokens.forEach(t => {
+                    const isUnknown = t.type === 'unknown';
+                    html += `
+                        <span class="${isUnknown ? 'unknown-token' : 'bg-blue-50 border border-blue-200 text-blue-700'} px-3 py-1.5 rounded-lg font-bold text-lg">
+                            ${t.token}
+                        </span>
+                    `;
+                });
+                html += `</div>`;
+
+                // 詳細リスト（ここを全候補で表示に変更）
+                // 読みやすさのためにテーブルライクなレイアウトに変更
+                html += `
+                    <div class="bg-gray-50 rounded-lg overflow-hidden border border-gray-100">
+                        <div class="px-4 py-2 bg-gray-100 text-xs font-bold text-gray-500 uppercase tracking-wider flex">
+                            <span class="w-24">単語</span>
+                            <span class="flex-1">意味・用例</span>
+                        </div>
+                `;
+                
+                res.tokens.filter(t => t.type !== 'unknown').forEach(t => {
+                    html += `
+                        <div class="details-row px-4 py-3 flex gap-4 border-t border-gray-100 items-start">
+                            <span class="font-bold text-gray-800 w-24 pt-0.5">${t.token}</span>
+                            <div class="flex-1">
+                                <p class="text-sm text-gray-700 mb-1 font-medium">${t.meaning}</p>
+                                <p class="text-xs text-gray-500 italic">Example: ${t.example}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                html += `</div>`; // 閉じる
+
+                card.innerHTML = html;
+                container.appendChild(card);
             });
         }
-        status.innerText = `推論完了`;
-    }
 
-    // イベント設定
-    document.getElementById('targetInput').addEventListener('input', analyze);
+        // イベントリスナー
+        document.getElementById('analyzeBtn').addEventListener('click', async () => {
+            const text = document.getElementById('inputText').value.trim();
+            if(!text) return;
+            const candidates = findSegmentations(text);
+            const ranked = rankResults(candidates);
+            renderResults(ranked);
+        });
 
-    // 起動時に辞書をロード
-    window.onload = loadDictionary;
+        loadDictionary();

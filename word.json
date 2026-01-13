@@ -1,0 +1,62 @@
+[
+    {
+        "token": "みや",
+        "meaning": "宮",
+        "example": "みやがやと"
+    },
+    {
+        "token": "や",
+        "meaning": "谷",
+        "example": "やと"
+    },
+    {
+        "token": "と",
+        "meaning": "場所",
+        "example": "やと"
+    },
+    {
+        "token": "が",
+        "meaning": "の",
+        "example": "みやがやと"
+    },
+    {
+        "token": "か",
+        "meaning": "川",
+        "example": "かわ"
+    },
+    {
+        "token": "わ",
+        "meaning": "場所",
+        "example": "かわ"
+    },
+    {
+        "token": "お",
+        "meaning": "峰",
+        "example": "おか"
+    },
+    {
+        "token": "か",
+        "meaning": "場所",
+        "example": "おか"
+    },
+    {
+        "token": "つ",
+        "meaning": "湧水",
+        "example": "つつね"
+    },
+    {
+        "token": "つか",
+        "meaning": "塚",
+        "example": "おおつか"
+    },
+    {
+        "token": "おお",
+        "meaning": "大きい",
+        "example": "おおつか"
+    },
+    {
+        "token": "ひ",
+        "meaning": "冷たい",
+        "example": "ひかわ"
+    }
+]
