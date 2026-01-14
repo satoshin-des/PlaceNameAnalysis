@@ -1068,5 +1068,25 @@
                 "meaning": "森"
             }
         ]
+    },
+    {
+        "text": "あぜのまえ",
+        "segments": [
+            {
+                "token": "あぜ",
+                "pos": "土地利用",
+                "meaning": "畦"
+            },
+            {
+                "token": "の",
+                "pos": "",
+                "meaning": "の"
+            }
+            {
+                "token": "まえ",
+                "pos": "方角",
+                "meaning": "前"
+            }
+        ]
     }
 ]
