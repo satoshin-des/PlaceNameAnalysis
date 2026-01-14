@@ -1193,5 +1193,20 @@
                 "meaning": "南"
             }
         ]
+    },
+    {
+        "text": "とうかぎ",
+        "segments": [
+            {
+                "token": "とうか",
+                "pos": "信仰",
+                "meaning": "稲荷社"
+            },
+            {
+                "token": "ぎ",
+                "pos": "植物",
+                "meaning": "木"
+            }
+        ]
     }
 ]
