@@ -143,7 +143,7 @@ function renderResults(candidates) {
                             <table class="w-full text-left">
                                 <thead class="bg-gray-100 text-gray-500 text-xs uppercase">
                                     <tr>
-                                        <th class="px-3 py-2">形態素</th>
+                                        <th class="px-3 py-2">地名要素</th>
                                         <th class="px-3 py-2">品詞</th>
                                         <th class="px-3 py-2">意味・情報</th>
                                     </tr>
