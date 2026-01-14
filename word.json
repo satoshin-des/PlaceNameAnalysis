@@ -663,5 +663,100 @@
                 "meaning": "坂"
             }
         ]
+    },
+    {
+        "text": "さくがあらく",
+        "segments": [
+            {
+                "token": "さく",
+                "pos": "名詞",
+                "meaning": "傾斜地"
+            },
+            {
+                "token": "が",
+                "pos": "助詞",
+                "meaning": "の"
+            },
+            {
+                "token": "あらく",
+                "pos": "名詞",
+                "meaning": "開墾地"
+            }
+        ]
+    },
+    {
+        "text": "さかうえ",
+        "segments": [
+            {
+                "token": "さか",
+                "pos": "名詞",
+                "meaning": "坂"
+            },
+            {
+                "token": "うえ",
+                "pos": "名詞",
+                "meaning": "上"
+            }
+        ]
+    },
+    {
+        "text": "さかした",
+        "segments": [
+            {
+                "token": "さか",
+                "pos": "名詞",
+                "meaning": "坂"
+            },
+            {
+                "token": "した",
+                "pos": "名詞",
+                "meaning": "下"
+            }
+        ]
+    },
+    {
+        "text": "くらうえ",
+        "segments": [
+            {
+                "token": "くら",
+                "pos": "名詞",
+                "meaning": "谷"
+            },
+            {
+                "token": "うえ",
+                "pos": "名詞",
+                "meaning": "上"
+            }
+        ]
+    },
+    {
+        "text": "かねづか",
+        "segments": [
+            {
+                "token": "かね",
+                "pos": "名詞",
+                "meaning": "庚"
+            },
+            {
+                "token": "づか",
+                "pos": "名詞",
+                "meaning": "塚"
+            }
+        ]
+    },
+    {
+        "text": "ままうえ",
+        "segments": [
+            {
+                "token": "まま",
+                "pos": "名詞",
+                "meaning": "湧水のある谷"
+            },
+            {
+                "token": "うえ",
+                "pos": "名詞",
+                "meaning": "上"
+            }
+        ]
     }
 ]
