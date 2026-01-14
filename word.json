@@ -1208,5 +1208,40 @@
                 "meaning": "木"
             }
         ]
+    },
+    {
+        "text": "うるしのま",
+        "segments": [
+            {
+                "token": "うるし",
+                "pos": "植物",
+                "meaning": "漆"
+            },
+            {
+                "token": "の",
+                "pos": "",
+                "meaning": "の"
+            },
+            {
+                "token": "ま",
+                "pos": "",
+                "meaning": "場所"
+            }
+        ]
+    },
+    {
+        "text": "おおびゃく",
+        "segments": [
+            {
+                "token": "おお",
+                "pos": "",
+                "meaning": "大きい"
+            },
+            {
+                "token": "びゃく",
+                "pos": "災害",
+                "meaning": "がけ崩れ"
+            }
+        ]
     }
 ]
