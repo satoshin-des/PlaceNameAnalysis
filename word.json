@@ -4,17 +4,17 @@
         "segments": [
             {
                 "token": "みや",
-                "pos": "名詞",
+                "pos": "建物",
                 "meaning": "神社"
             },
             {
                 "token": "が",
-                "pos": "助詞",
+                "pos": "",
                 "meaning": "の"
             },
             {
                 "token": "やと",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "谷戸"
             }
         ]
@@ -24,12 +24,12 @@
         "segments": [
             {
                 "token": "た",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "田"
             },
             {
                 "token": "ま",
-                "pos": "名詞",
+                "pos": "",
                 "meaning": "場所"
             }
         ]
@@ -44,12 +44,12 @@
             },
             {
                 "token": "か",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "川"
             },
             {
                 "token": "わ",
-                "pos": "名詞",
+                "pos": "",
                 "meaning": "場所"
             }
         ]
@@ -64,7 +64,7 @@
             },
             {
                 "token": "つか",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "塚"
             }
         ]
@@ -74,12 +74,12 @@
         "segments": [
             {
                 "token": "いなり",
-                "pos": "名詞",
+                "pos": "信仰",
                 "meaning": "稲荷社"
             },
             {
                 "token": "まえ",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "前"
             }
         ]
@@ -89,12 +89,12 @@
         "segments": [
             {
                 "token": "や",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "谷"
             },
             {
                 "token": "と",
-                "pos": "名詞",
+                "pos": "",
                 "meaning": "場所"
             }
         ]
@@ -104,12 +104,12 @@
         "segments": [
             {
                 "token": "かい",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "谷"
             },
             {
                 "token": "と",
-                "pos": "名詞",
+                "pos": "",
                 "meaning": "場所"
             }
         ]
@@ -119,12 +119,12 @@
         "segments": [
             {
                 "token": "お",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "峰"
             },
             {
                 "token": "か",
-                "pos": "名詞",
+                "pos": "",
                 "meaning": "場所"
             }
         ]
@@ -134,12 +134,12 @@
         "segments": [
             {
                 "token": "お",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "峰"
             },
             {
                 "token": "ね",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "嶺"
             }
         ]
@@ -149,12 +149,12 @@
         "segments": [
             {
                 "token": "か",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "川"
             },
             {
                 "token": "わ",
-                "pos": "名詞",
+                "pos": "",
                 "meaning": "場所"
             }
         ]
@@ -164,12 +164,12 @@
         "segments": [
             {
                 "token": "ぬ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "沼"
             },
             {
                 "token": "ま",
-                "pos": "名詞",
+                "pos": "",
                 "meaning": "場所"
             }
         ]
@@ -179,12 +179,12 @@
         "segments": [
             {
                 "token": "やま",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "山林"
             },
             {
                 "token": "ざき",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "先"
             }
         ]
@@ -194,12 +194,12 @@
         "segments": [
             {
                 "token": "うえ",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "上"
             },
             {
                 "token": "たけ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "山"
             }
         ]
@@ -209,17 +209,17 @@
         "segments": [
             {
                 "token": "たけ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "山"
             },
             {
                 "token": "の",
-                "pos": "助詞",
+                "pos": "",
                 "meaning": "の"
             },
             {
                 "token": "はな",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "端"
             }
         ]
@@ -229,12 +229,12 @@
         "segments": [
             {
                 "token": "たけ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "山"
             },
             {
                 "token": "した",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "下"
             }
         ]
@@ -244,12 +244,12 @@
         "segments": [
             {
                 "token": "ひかわ",
-                "pos": "名詞",
+                "pos": "信仰",
                 "meaning": "氷川社"
             },
             {
                 "token": "まえ",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "前"
             }
         ]
@@ -259,7 +259,7 @@
         "segments": [
             {
                 "token": "あらく",
-                "pos": "名詞",
+                "pos": "土地利用",
                 "meaning": "開墾地"
             }
         ]
@@ -269,7 +269,7 @@
         "segments": [
             {
                 "token": "あらい",
-                "pos": "名詞",
+                "pos": "土地利用",
                 "meaning": "開墾地"
             }
         ]
@@ -279,12 +279,12 @@
         "segments": [
             {
                 "token": "ふじ",
-                "pos": "名詞",
+                "pos": "信仰",
                 "meaning": "富士浅間社"
             },
             {
                 "token": "みや",
-                "pos": "名詞",
+                "pos": "建物",
                 "meaning": "神社"
             }
         ]
@@ -294,12 +294,12 @@
         "segments": [
             {
                 "token": "いわ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "岩"
             },
             {
                 "token": "ざき",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "先"
             }
         ]
@@ -309,12 +309,12 @@
         "segments": [
             {
                 "token": "はね",
-                "pos": "名詞",
+                "pos": "地質",
                 "meaning": "赤土"
             },
             {
                 "token": "ざわ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "沢"
             }
         ]
@@ -324,12 +324,12 @@
         "segments": [
             {
                 "token": "きた",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "北"
             },
             {
                 "token": "はけ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "ハケ"
             }
         ]
@@ -339,7 +339,7 @@
         "segments": [
             {
                 "token": "くめ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "曲"
             }
         ]
@@ -349,12 +349,12 @@
         "segments": [
             {
                 "token": "いる",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "谷"
             },
             {
                 "token": "ま",
-                "pos": "名詞",
+                "pos": "",
                 "meaning": "場所"
             }
         ]
@@ -364,12 +364,12 @@
         "segments": [
             {
                 "token": "はん",
-                "pos": "名詞",
+                "pos": "地質",
                 "meaning": "赤土"
             },
             {
                 "token": "のう",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "野"
             }
         ]
@@ -379,12 +379,12 @@
         "segments": [
             {
                 "token": "いり",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "谷"
             },
             {
                 "token": "ま",
-                "pos": "名詞",
+                "pos": "",
                 "meaning": "場所"
             }
         ]
@@ -394,12 +394,12 @@
         "segments": [
             {
                 "token": "やま",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "山林"
             },
             {
                 "token": "だ",
-                "pos": "名詞",
+                "pos": "土地利用",
                 "meaning": "田"
             }
         ]
@@ -409,13 +409,13 @@
         "segments": [
             {
                 "token": "しの",
-                "pos": "名詞",
+                "pos": "植物",
                 "meaning": "篠竹"
             },
             {
                 "token": "やま",
-                "pos": "名詞",
-                "meaning": "さんりん"
+                "pos": "地形",
+                "meaning": "山林"
             }
         ]
     },
@@ -424,12 +424,12 @@
         "segments": [
             {
                 "token": "はな",
-                "pos": "名詞",
+                "pos": "地質",
                 "meaning": "赤土"
             },
             {
                 "token": "ざわ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "沢"
             }
         ]
@@ -439,12 +439,12 @@
         "segments": [
             {
                 "token": "ほど",
-                "pos": "名詞",
+                "pos": "信仰",
                 "meaning": "陰"
             },
             {
                 "token": "さん",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "山"
             }
         ]
@@ -454,17 +454,17 @@
         "segments": [
             {
                 "token": "ほど",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "低湿地"
             },
             {
                 "token": "が",
-                "pos": "助詞",
+                "pos": "",
                 "meaning": "の"
             },
             {
                 "token": "や",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "谷"
             }
         ]
@@ -474,12 +474,12 @@
         "segments": [
             {
                 "token": "とりい",
-                "pos": "名詞",
+                "pos": "建物",
                 "meaning": "鳥居"
             },
             {
                 "token": "まえ",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "前"
             }
         ]
@@ -489,12 +489,12 @@
         "segments": [
             {
                 "token": "くめ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "曲"
             },
             {
                 "token": "がわ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "川"
             }
         ]
@@ -509,7 +509,7 @@
             },
             {
                 "token": "げえ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "谷"
             }
         ]
@@ -519,17 +519,17 @@
         "segments": [
             {
                 "token": "さし",
-                "pos": "名詞",
+                "pos": "土地利用",
                 "meaning": "焼き畑"
             },
             {
                 "token": "が",
-                "pos": "助詞",
+                "pos": "",
                 "meaning": "の"
             },
             {
                 "token": "や",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "谷"
             }
         ]
@@ -539,12 +539,12 @@
         "segments": [
             {
                 "token": "やま",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "山林"
             },
             {
                 "token": "あらく",
-                "pos": "名詞",
+                "pos": "土地利用",
                 "meaning": "開墾地"
             }
         ]
@@ -554,7 +554,7 @@
         "segments": [
             {
                 "token": "わだ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "曲"
             }
         ]
@@ -564,12 +564,12 @@
         "segments": [
             {
                 "token": "かさ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "高地"
             },
             {
                 "token": "うえ",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "上"
             }
         ]
@@ -584,7 +584,7 @@
             },
             {
                 "token": "やま",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "山"
             }
         ]
@@ -594,12 +594,12 @@
         "segments": [
             {
                 "token": "ひかわ",
-                "pos": "名詞",
+                "pos": "信仰",
                 "meaning": "氷川社"
             },
             {
                 "token": "ざか",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "坂"
             }
         ]
@@ -609,12 +609,12 @@
         "segments": [
             {
                 "token": "や",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "谷"
             },
             {
                 "token": "ぼ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "低湿地"
             }
         ]
@@ -624,12 +624,12 @@
         "segments": [
             {
                 "token": "すわ",
-                "pos": "名詞",
+                "pos": "信仰",
                 "meaning": "諏訪社"
             },
             {
                 "token": "まえ",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "前"
             }
         ]
@@ -639,12 +639,12 @@
         "segments": [
             {
                 "token": "みや",
-                "pos": "名詞",
+                "pos": "建物",
                 "meaning": "神社"
             },
             {
                 "token": "まえ",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "前"
             }
         ]
@@ -654,12 +654,12 @@
         "segments": [
             {
                 "token": "てら",
-                "pos": "名詞",
+                "pos": "建物",
                 "meaning": "寺"
             },
             {
                 "token": "さか",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "坂"
             }
         ]
@@ -669,17 +669,17 @@
         "segments": [
             {
                 "token": "さく",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "傾斜地"
             },
             {
                 "token": "が",
-                "pos": "助詞",
+                "pos": "",
                 "meaning": "の"
             },
             {
                 "token": "あらく",
-                "pos": "名詞",
+                "pos": "土地利用",
                 "meaning": "開墾地"
             }
         ]
@@ -689,12 +689,12 @@
         "segments": [
             {
                 "token": "さか",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "坂"
             },
             {
                 "token": "うえ",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "上"
             }
         ]
@@ -704,12 +704,12 @@
         "segments": [
             {
                 "token": "さか",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "坂"
             },
             {
                 "token": "した",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "下"
             }
         ]
@@ -719,12 +719,12 @@
         "segments": [
             {
                 "token": "くら",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "谷"
             },
             {
                 "token": "うえ",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "上"
             }
         ]
@@ -734,12 +734,12 @@
         "segments": [
             {
                 "token": "かね",
-                "pos": "名詞",
+                "pos": "信仰",
                 "meaning": "庚"
             },
             {
                 "token": "づか",
-                "pos": "名詞",
+                "pos": "",
                 "meaning": "塚"
             }
         ]
@@ -749,12 +749,12 @@
         "segments": [
             {
                 "token": "まま",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "湧水のある谷"
             },
             {
                 "token": "うえ",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "上"
             }
         ]
@@ -764,12 +764,12 @@
         "segments": [
             {
                 "token": "うら",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "裏"
             },
             {
                 "token": "まち",
-                "pos": "名詞",
+                "pos": "土地利用",
                 "meaning": "町"
             }
         ]
@@ -779,12 +779,12 @@
         "segments": [
             {
                 "token": "うら",
-                "pos": "名詞",
+                "pos": "位置",
                 "meaning": "裏"
             },
             {
                 "token": "やま",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "山林"
             }
         ]
@@ -794,12 +794,12 @@
         "segments": [
             {
                 "token": "ち",
-                "pos": "名詞",
+                "pos": "",
                 "meaning": "沢山"
             },
             {
                 "token": "くま",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "曲"
             }
         ]
@@ -809,12 +809,12 @@
         "segments": [
             {
                 "token": "ほど",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "低湿地"
             },
             {
                 "token": "くぼ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "窪地"
             }
         ]
@@ -829,7 +829,7 @@
             },
             {
                 "token": "たけ",
-                "pos": "名詞",
+                "pos": "地形",
                 "meaning": "山"
             }
         ]
