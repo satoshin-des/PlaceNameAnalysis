@@ -758,5 +758,80 @@
                 "meaning": "上"
             }
         ]
+    },
+    {
+        "text": "うらまち",
+        "segments": [
+            {
+                "token": "うら",
+                "pos": "名詞",
+                "meaning": "裏"
+            },
+            {
+                "token": "まち",
+                "pos": "名詞",
+                "meaning": "町"
+            }
+        ]
+    },
+    {
+        "text": "うらやま",
+        "segments": [
+            {
+                "token": "うら",
+                "pos": "名詞",
+                "meaning": "裏"
+            },
+            {
+                "token": "やま",
+                "pos": "名詞",
+                "meaning": "山林"
+            }
+        ]
+    },
+    {
+        "text": "ちくま",
+        "segments": [
+            {
+                "token": "ち",
+                "pos": "名詞",
+                "meaning": "沢山"
+            },
+            {
+                "token": "くま",
+                "pos": "名詞",
+                "meaning": "曲"
+            }
+        ]
+    },
+    {
+        "text": "ほとくぼ",
+        "segments": [
+            {
+                "token": "ほど",
+                "pos": "名詞",
+                "meaning": "低湿地"
+            },
+            {
+                "token": "くぼ",
+                "pos": "名詞",
+                "meaning": "窪地"
+            }
+        ]
+    },
+    {
+        "text": "おおたけ",
+        "segments": [
+            {
+                "token": "おお",
+                "pos": "",
+                "meaning": "大きい"
+            },
+            {
+                "token": "たけ",
+                "pos": "名詞",
+                "meaning": "山"
+            }
+        ]
     }
 ]
