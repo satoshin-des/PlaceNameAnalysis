@@ -1,16 +1,127 @@
-/* All of this code is written with AI */
+/* Almost of this code is written with AI */
 
-.token-chip {
-    transition: all 0.2s;
+/* --- 全体の背景：地図の上に敷くトレーシングペーパーのような質感 --- */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 背景色：真っ黒ではなく、温かみのあるオフホワイト（和紙っぽい白）を半透明に */
+    background-color: rgba(255, 253, 250, 0.85);
+    /* すりガラス効果：強めにかけて奥の文字を優しくぼかす */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.8s ease;
 }
 
-.token-chip:hover {
-    transform: translateY(-2px);
+.loader-inner {
+    text-align: center;
+    width: 300px;
+    /* 少し広げてゆとりを持たせる */
 }
 
-/* 未知語（辞書にない文字）のスタイル */
-.unknown-token {
-    background-color: #f3f4f6;
-    color: #9ca3af;
-    border: 1px dashed #d1d5db;
+/* --- アイコン：知的で落ち着いたインディゴブルー --- */
+.maps-spinner {
+    font-size: 80px;
+    /* 色：知的な「藍色（インディゴ）」 */
+    color: #3b82f6;
+    display: inline-block;
+    margin-bottom: 30px;
+
+    /* アニメーション変更：回転ではなく「ふわふわ浮く」+「コンパスのような揺らぎ」 */
+    animation: floating-compass 3s ease-in-out infinite;
+
+    /* 影：ネオン光彩ではなく、太陽光のような柔らかいドロップシャドウ */
+    text-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* コンパスが方角を探すような、ゆったりした動き */
+@keyframes floating-compass {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-10px) rotate(-10deg);
+        /* ちょっと浮いて左に傾く */
+    }
+
+    75% {
+        transform: translateY(-5px) rotate(10deg);
+        /* 右に傾く */
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* --- テキスト：タイプライター風の知的さと視認性 --- */
+.loading-label {
+    /* 色：柔らかいグレー（文字のきつさを消す） */
+    color: #64748b;
+    font-family: "Georgia", "Yu Mincho", "Hiragino Mincho ProN", serif;
+    /* 明朝体で知的さを演出 */
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    /* 文字間を広げて上品に */
+    margin-bottom: 20px;
+
+    /* 点滅：ゆっくり呼吸するように */
+    animation: breathe 2s ease-in-out infinite;
+}
+
+@keyframes breathe {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* --- プログレスバーの背景：地図の等高線や道をイメージ --- */
+.progress-track {
+    width: 100%;
+    height: 6px;
+    /* 少し太くして視認性アップ */
+    background: #e2e8f0;
+    /* 薄いグレー */
+    border-radius: 9999px;
+    /* 丸くする */
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* 内側に少し影を入れて窪みを表現 */
+}
+
+/* --- プログレスバーの中身：新緑や水をイメージしたグラデーション --- */
+#progress-fill {
+    width: 0%;
+    height: 100%;
+    /* 色：青（海・空）から緑（大地）へのグラデーション */
+    background: linear-gradient(90deg, #3b82f6, #10b981);
+    border-radius: 9999px;
+
+    /* 光沢：発光ではなく、ツヤっとした質感 */
+    box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* 自然な加減速 */
+}
+
+/* 完了時のフェードアウト */
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease-out;
+    /* ゆっくり消える */
 }
