@@ -5,7 +5,7 @@
             {
                 "token": "みや",
                 "pos": "名詞",
-                "meaning": "宮"
+                "meaning": "神社"
             },
             {
                 "token": "が",
@@ -285,7 +285,7 @@
             {
                 "token": "みや",
                 "pos": "名詞",
-                "meaning": "宮"
+                "meaning": "神社"
             }
         ]
     },
@@ -531,6 +531,136 @@
                 "token": "や",
                 "pos": "名詞",
                 "meaning": "谷"
+            }
+        ]
+    },
+    {
+        "text": "やまあらく",
+        "segments": [
+            {
+                "token": "やま",
+                "pos": "名詞",
+                "meaning": "山林"
+            },
+            {
+                "token": "あらく",
+                "pos": "名詞",
+                "meaning": "開墾地"
+            }
+        ]
+    },
+    {
+        "text": "わだ",
+        "segments": [
+            {
+                "token": "わだ",
+                "pos": "名詞",
+                "meaning": "曲"
+            }
+        ]
+    },
+    {
+        "text": "かさうえ",
+        "segments": [
+            {
+                "token": "かさ",
+                "pos": "名詞",
+                "meaning": "高地"
+            },
+            {
+                "token": "うえ",
+                "pos": "名詞",
+                "meaning": "上"
+            }
+        ]
+    },
+    {
+        "text": "さやま",
+        "segments": [
+            {
+                "token": "さ",
+                "pos": "",
+                "meaning": "小さい"
+            },
+            {
+                "token": "やま",
+                "pos": "名詞",
+                "meaning": "山"
+            }
+        ]
+    },
+    {
+        "text": "ひかわざか",
+        "segments": [
+            {
+                "token": "ひかわ",
+                "pos": "名詞",
+                "meaning": "氷川社"
+            },
+            {
+                "token": "ざか",
+                "pos": "名詞",
+                "meaning": "坂"
+            }
+        ]
+    },
+    {
+        "text": "やぼ",
+        "segments": [
+            {
+                "token": "や",
+                "pos": "名詞",
+                "meaning": "谷"
+            },
+            {
+                "token": "ぼ",
+                "pos": "名詞",
+                "meaning": "低湿地"
+            }
+        ]
+    },
+    {
+        "text": "すわまえ",
+        "segments": [
+            {
+                "token": "すわ",
+                "pos": "名詞",
+                "meaning": "諏訪社"
+            },
+            {
+                "token": "まえ",
+                "pos": "名詞",
+                "meaning": "前"
+            }
+        ]
+    },
+    {
+        "text": "みやまえ",
+        "segments": [
+            {
+                "token": "みや",
+                "pos": "名詞",
+                "meaning": "神社"
+            },
+            {
+                "token": "まえ",
+                "pos": "名詞",
+                "meaning": "前"
+            }
+        ]
+    },
+    {
+        "text": "てらさか",
+        "segments": [
+            {
+                "token": "てら",
+                "pos": "名詞",
+                "meaning": "寺"
+            },
+            {
+                "token": "さか",
+                "pos": "名詞",
+                "meaning": "坂"
             }
         ]
     }
