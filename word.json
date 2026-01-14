@@ -1088,5 +1088,50 @@
                 "meaning": "前"
             }
         ]
+    },
+    {
+        "text": "ちかた",
+        "segments": [
+            {
+                "token": "ちかた",
+                "pos": "信仰",
+                "meaning": "千門社"
+            }
+        ]
+    },
+    {
+        "text": "しゃくじい",
+        "segments": [
+            {
+                "token": "しゃくじい",
+                "pos": "信仰",
+                "meaning": "ミシャグジ信仰"
+            }
+        ]
+    },
+    {
+        "text": "いせやま",
+        "segments": [
+            {
+                "token": "いせ",
+                "pos": "信仰",
+                "meaning": "伊勢社"
+            },
+            {
+                "token": "やま",
+                "pos": "地形",
+                "meaning": "山．山林．森．"
+            }
+        ]
+    },
+    {
+        "text": "かいほつ",
+        "segments": [
+            {
+                "token": "かいほつ",
+                "pos": "土地利用",
+                "meaning": "開墾地"
+            }
+        ]
     }
 ]
