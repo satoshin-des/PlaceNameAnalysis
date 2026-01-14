@@ -22,7 +22,7 @@ async function trainFromCorpus() {
                         count: 0 // 出現回数をカウント（スコア計算用）
                     };
                 }
-                learnedDictionary[seg.token].count++;
+                ++learnedDictionary[seg.token].count;
             });
         });
 
@@ -30,7 +30,6 @@ async function trainFromCorpus() {
         const vocabSize = Object.keys(learnedDictionary).length;
         document.getElementById('vocabCount').innerText = vocabSize;
         console.log("学習完了: ", learnedDictionary);
-
     } catch (e) {
         console.error("データの読み込みに失敗しました", e);
     }
@@ -45,7 +44,9 @@ function analyzeText(text) {
     const tokens = Object.values(learnedDictionary);
 
     for (let i = 0; i < text.length; ++i) {
-        if (dp[i].length === 0) continue;
+        if (dp[i].length === 0) {
+            continue;
+        }
 
         // A. 学習済み単語とのマッチング
         for (const word of tokens) {
@@ -54,7 +55,7 @@ function analyzeText(text) {
 
                 // TensorFlow.js的な重み付け:
                 // 長い単語ほど価値が高く、頻出単語(count)も少し有利にする
-                const lengthScore = word.token.length * 10;
+                const lengthScore = Math.pow(word.token.length + 1, Math.E);
                 const freqScore = Math.log(word.count + 1);
                 const wordScore = lengthScore + freqScore;
 
@@ -106,12 +107,12 @@ function renderResults(candidates) {
     candidates.forEach((cand, idx) => {
         // スコア計算 (0-100%)
         let percent = 100;
-        if (candidates.length > 1 && maxScore !== minScore) {
+        if ((candidates.length > 1) && (maxScore !== minScore)) {
             percent = ((cand.score - minScore) / (maxScore - minScore)) * 100;
         }
         percent = Math.max(percent, 5); // 最低幅確保
 
-        const isTop = idx === 0;
+        const isTop = (idx === 0);
 
         const html = `
                 <div class="bg-white rounded-xl border ${isTop ? 'border-blue-500 ring-2 ring-blue-100 shadow-lg' : 'border-gray-200'} overflow-hidden transition hover:shadow-md">
@@ -168,7 +169,9 @@ function renderResults(candidates) {
 
 document.getElementById('analyzeBtn').addEventListener('click', () => {
     const text = document.getElementById('inputText').value.trim();
-    if (!text) return;
+    if (!text) {
+        return;
+    }
 
     const results = analyzeText(text);
     renderResults(results);
