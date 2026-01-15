@@ -1308,5 +1308,35 @@
                 "meaning": "焼き畑"
             }
         ]
+    },
+    {
+        "text": "らいでんまえ",
+        "segments": [
+            {
+                "token": "らいでん",
+                "pos": "信仰",
+                "meaning": "雷電社"
+            },
+            {
+                "token": "まえ",
+                "pos": "方角",
+                "meaning": "前"
+            }
+        ]
+    },
+    {
+        "text": "かわべ",
+        "segments": [
+            {
+                "token": "かわ",
+                "pos": "地形",
+                "meaning": "川"
+            },
+            {
+                "token": "べ",
+                "pos": "",
+                "meaning": "辺"
+            }
+        ]
     }
 ]
