@@ -1243,5 +1243,40 @@
                 "meaning": "がけ崩れ"
             }
         ]
+    },
+    {
+        "text": "おかねづか",
+        "segments": [
+            {
+                "token": "おかね",
+                "pos": "信仰",
+                "meaning": "庚"
+            },
+            {
+                "token": "づか",
+                "pos": "地形",
+                "meaning": "塚．古墳．"
+            }
+        ]
+    },
+    {
+        "text": "さすがいと",
+        "segments": [
+            {
+                "token": "さす",
+                "pos": "土地利用",
+                "meaning": "焼き畑"
+            },
+            {
+                "token": "がい",
+                "pos": "地形",
+                "meaning": "谷"
+            },
+            {
+                "token": "と",
+                "pos": "",
+                "meaning": "場所"
+            }
+        ]
     }
 ]
