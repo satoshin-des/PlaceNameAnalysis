@@ -1428,5 +1428,45 @@
                 "meaning": "谷．谷戸．"
             }
         ]
+    },
+    {
+        "text": "かいや",
+        "segments": [
+            {
+                "token": "かい",
+                "pos": "地形",
+                "meaning": "谷．谷戸．"
+            },
+            {
+                "token": "や",
+                "pos": "地形",
+                "meaning": "谷．谷戸．"
+            }
+        ]
+    },
+    {
+        "text": "いっぽんぎ",
+        "segments": [
+            {
+                "token": "いっぽんぎ",
+                "pos": "目標",
+                "meaning": "1本の木"
+            }
+        ]
+    },
+    {
+        "text": "よしはら",
+        "segments": [
+            {
+                "token": "よし",
+                "pos": "植物",
+                "meaning": "葦"
+            },
+            {
+                "token": "はら",
+                "pos": "地形",
+                "meaning": "原"
+            }
+        ]
     }
 ]
