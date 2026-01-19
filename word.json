@@ -1528,5 +1528,30 @@
                 "meaning": "寺．堂．"
             }
         ]
+    },
+    {
+        "text": "あさま",
+        "segments": [
+            {
+                "token": "あさ",
+                "pos": "地形",
+                "meaning": "火山"
+            },
+            {
+                "token": "ま",
+                "pos": "",
+                "meaning": "場所"
+            }
+        ]
+    },
+    {
+        "text": "あそ",
+        "segments": [
+            {
+                "token": "あそ",
+                "pos": "地形",
+                "meaning": "火山"
+            }
+        ]
     }
 ]
