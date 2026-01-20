@@ -1643,5 +1643,80 @@
                 "meaning": "包み"
             }
         ]
+    },
+    {
+        "text": "えんまどう",
+        "segments": [
+            {
+                "token": "えんまどう",
+                "pos": "建物",
+                "meaning": "閻魔堂"
+            }
+        ]
+    },
+    {
+        "text": "きつねづか",
+        "segments": [
+            {
+                "token": "きつね",
+                "pos": "動物・信仰",
+                "meaning": "1. キツネ<br>2. 稲荷信仰．狐信仰．"
+            },
+            {
+                "token": "づか",
+                "pos": "土地利用",
+                "meaning": "塚．古墳．"
+            }
+        ]
+    },
+    {
+        "text": "しき",
+        "segments": [
+            {
+                "token": "しき",
+                "pos": "",
+                "meaning": "新羅"
+            }
+        ]
+    },
+    {
+        "text": "だいろくてん",
+        "segments": [
+            {
+                "token": "だいろくてん",
+                "pos": "信仰",
+                "meaning": "大六天信仰"
+            }
+        ]
+    },
+    {
+        "text": "あかばっけ",
+        "segments": [
+            {
+                "token": "あか",
+                "pos": "地質",
+                "meaning": "赤土．赤土の色．"
+            },
+            {
+                "token": "ばっけ",
+                "pos": "地形",
+                "meaning": "崖．湧水のある崖．河岸段丘．はけ．"
+            }
+        ]
+    },
+    {
+        "text": "えのきど",
+        "segments": [
+            {
+                "token": "えのき",
+                "pos": "目標",
+                "meaning": "榎木"
+            },
+            {
+                "token": "ど",
+                "pos": "地点",
+                "meaning": "場所"
+            }
+        ]
     }
 ]
