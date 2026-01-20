@@ -1613,5 +1613,35 @@
                 "meaning": "町"
             }
         ]
+    },
+    {
+        "text": "ねぎし",
+        "segments": [
+            {
+                "token": "ね",
+                "pos": "地形",
+                "meaning": "麓"
+            },
+            {
+                "token": "ぎし",
+                "pos": "地形",
+                "meaning": "切り立った所．崖．"
+            }
+        ]
+    },
+    {
+        "text": "ねくるみ",
+        "segments": [
+            {
+                "token": "ね",
+                "pos": "地形",
+                "meaning": "麓"
+            },
+            {
+                "token": "くるみ",
+                "pos": "地形",
+                "meaning": "包み"
+            }
+        ]
     }
 ]
